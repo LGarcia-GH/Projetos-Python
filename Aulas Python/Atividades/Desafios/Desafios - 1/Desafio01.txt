@@ -1,0 +1,10 @@
+Classificar o triangulo de acordo com os seus lados:
+
+- Equilátero: Um triângulo equilátero tem todos os três lados com o mesmo comprimento.
+Exemplo: 0.7, 0.7 e 0.7
+
+- Isósceles: Um triângulo isósceles tem dois lados com o mesmo comprimento e um lado diferente.
+Exemplo: 1, 1 e 0.4
+
+- Escaleno: Um triângulo escaleno tem todos os três lados com comprimentos diferentes.
+Exemplo: 0.5, 0.9 e 1

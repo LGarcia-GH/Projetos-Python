@@ -1,0 +1,22 @@
+{
+    "emailUsuario": {
+        "adm@gmail.com": "adm",
+        "zezindopneu@outlook.com": "zezindopneu",
+        "Ligia@gmail.com": "ligia"
+    },
+    "senha": [
+        "Admininastror",
+        "132456",
+        "123456"
+    ],
+    "idade": [
+        22,
+        100,
+        30
+    ],
+    "superUsuario": [
+        1,
+        0,
+        0
+    ]
+}

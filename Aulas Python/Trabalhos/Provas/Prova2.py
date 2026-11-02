@@ -1,0 +1,117 @@
+# Codigo de: Lucas Cavalcante Garcia
+# Data de criação 13/05/2026
+
+import os
+
+# Variavel de Reinicialização
+r = bool(True)
+
+# Função de Limpeza de Caracteres
+def limpar():
+    os.system('cls')
+
+# Execução do Codigo Reinicializavel
+while r == True:
+
+    # Variaveis de Identificação
+    nome = str()
+    cod = str()
+
+    # Variaveis de Tipo de Funcionario e Turno
+    turno = str("F")
+    categoria = str("F")
+    horasT = float(0)
+
+    # Variaveis Salariais
+    salario = float(450)
+    salarioF = float()
+    salarioH = float()
+    salarioI = float()
+    auxAl = float()
+
+    # Reset da Variavel de Reinicialização
+    r = bool(False)
+    
+    # Checagem de Funcionario
+    nome = input('Digite o nome do funcionario: ')
+    limpar()
+    cod = input('Digite o codigo do funcionario: ')
+    limpar()
+
+    # Checagem de Turno
+    while turno != "M" and turno != "V" and turno != "N":
+        print('Escolha o turno de trabalho em letras maiusculas')
+        print("--------------------------------------------------------")
+        print('(M) Matutino')
+        print('(V) Vespertino')
+        print('(N) Noturno')
+        turno = input("Digite a opção de turno: ").upper()
+        limpar()
+        if turno != "M" and turno != "V" and turno != "N":
+            print("Opção invalida")
+            print(" ")
+
+    #Checagem de Horas Trabalhadas
+    while horasT <= 0:
+        horasT = float(input("Digite a quantidade de horas trabalhadas no mês: "))
+        limpar()
+        if horasT <= 0:
+            print("Opção invalida")
+            print(" ")
+
+    # Checagem da Categoria do Funcionario
+    while categoria != "G" and categoria != "O":
+        print('Escolha a categoria de função em letras maiusculas')
+        print("--------------------------------------------------------")
+        print('(O) Operario')
+        print('(G) Gerente')
+        categoria = input("Digite a opção de turno: ").upper()
+        limpar()
+        if categoria != "G" and categoria != "O":
+            print("Opção invalida")
+            print(" ")
+
+    # Aplicação de Bonus Salarial
+    if categoria == "G" and turno == "N":
+        salarioH = (salario * 0.18)
+    elif categoria == "G" and turno == "M" or turno == "V":
+        salarioH = (salario * 0.15)
+    elif categoria == "O" and turno == "N":
+        salarioH = (salario * 0.13)
+    elif categoria == "O" and turno == "M" or turno == "V":
+        salarioH = (salario * 0.10)
+
+    # Aplicação de Salario Inicial
+    salarioI = salarioH * horasT
+
+    # Checagem do Vale Refeiçãpo
+    if salarioI <= 300 and salarioI > 0:
+        auxAl = salarioI * 0.20
+    elif salarioI > 300 and salarioI <= 600:
+        auxAl = salarioI * 0.15
+    elif salarioI > 600:
+        auxAl = salarioI * 0.05
+
+    # Aplicação do Vale Refeição
+    salarioF = salarioI + auxAl
+
+    # Resultado Final
+    print("--------------------------------------------------------")
+    print(f"Funcionario: {nome}")
+    print(f"Codigo: {cod}")
+    print("--------------------------------------------------------")
+    print(f"Horas Trabalhadas: {horasT}")
+    print(f"Valor da hora trabalhada: {salarioH:.2f}")
+    print(f"Salario Inicial: {salarioI:.2f}")
+    print(f"Auxilio Alimentacao: {auxAl:.2f}")
+    print(f"Salario Final: {salarioF:.2f}")
+    print("--------------------------------------------------------")
+    # Aba de Reinicialização / Encerramento
+
+    print("Deseja Reiniciar o Programa?")
+    r = input("(S)-Sim / (N)-Não: ").upper()
+    limpar()
+    if r == "S":
+        r = bool(True)
+    else:
+        os.system('exit')

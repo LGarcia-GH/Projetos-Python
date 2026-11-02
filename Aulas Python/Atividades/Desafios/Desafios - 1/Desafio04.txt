@@ -1,0 +1,1 @@
+Informados 5 números pelo usuário, apresente o maior e menos entre eles.

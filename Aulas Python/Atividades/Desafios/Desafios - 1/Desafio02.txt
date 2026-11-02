@@ -1,0 +1,10 @@
+Classificar o triangulo de acordo com os seus angulos:
+
+Triângulo Retângulo: Um triângulo retângulo tem um ângulo reto, que mede 90 graus. Os outros dois ângulos agudos somam 90 graus.
+Exemplo: 90 graus, 45 graus, 45 graus
+
+Triângulo Obtusângulo: Um triângulo obtusângulo possui um ângulo obtuso, que mede mais de 90 graus. Os outros dois ângulos são agudos, cada um medindo menos de 90 graus.
+Exemplo: 130 graus, 25 graus e 25 graus.
+
+Triângulo Acutângulo: Um triângulo acutângulo tem todos os três ângulos agudos, cada um medindo menos de 90 graus.
+Exemplo: 30 graus, 80 graus e 70 graus
