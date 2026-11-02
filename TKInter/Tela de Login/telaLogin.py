@@ -3,7 +3,16 @@ import tkinter as tk
 from tkinter import messagebox
 import subprocess
 from registro import criarRegistro
+from pathlib import Path
 import sys
+#endregion
+
+#region Caminho Variavel
+# Pega o diretório onde o arquivo atual (registro.py) está salvo
+login_base = Path(__file__).resolve().parent
+
+# Define o caminho completo usando a barra '/' para juntar as pastas
+caminho_icone = login_base / "img" / "IconeF.png"
 #endregion
 
 #region Função de Registro JSON [ rgba(40,40,0)]
@@ -16,7 +25,7 @@ contas = criarRegistro()
 janela = tk.Tk()
 
 #Função Para Usar Uma Imagem Como Icone do Programa
-icone = tk.PhotoImage(file="img/IconeF.png")
+icone = tk.PhotoImage(file=caminho_icone)
 
 programa = tk.Frame(janela)
 
