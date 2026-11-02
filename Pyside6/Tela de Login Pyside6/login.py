@@ -14,16 +14,20 @@ class Janela_Principal(QMainWindow):
 
         self.setWindowTitle("Tela de Login") # Define o título da janela
 
+        self.telaPrincipal = QStackedLayout()
+
+        #region Tela de Login
+        self.telaLoginLayout = QWidget()
+
         self.tusuario = QLabel("Usuario") # Cria um texto na janela
         self.usuario_entry = QLineEdit() # Cria uma linha de texto na janela
-        self.usuario_entry.setPlaceholderText("Digite o Usuario") # Define o texto temporario da linha de texto
+        self.usuario_entry.setPlaceholderText("Digite o Usuario") # Define o texto temporario dentro da linha de texto
 
         self.tsenha = QLabel("Senha")
         self.senha_entry = QLineEdit()
-        self.senha_entry.setPlaceholderText("Digite a Senha")
+        self.senha_entry.setPlaceholderText("Digite a Senha") 
 
         self.logar = QPushButton("Logar") # Cria um botão com texto
-        self.logar.clicked.connect(self.botao_clicado) # Executa a função selecionada dentro da propria classe
 
         self.cadastrar = QPushButton("Cadastrar")
 
@@ -31,23 +35,41 @@ class Janela_Principal(QMainWindow):
 
         self.setFixedSize(500, 300) # Define o tamanho da janela
 
-        layout = QVBoxLayout() # Define uma variavel como ordem de layout
-        layout.addWidget(self.tusuario) # Define a ordem dos Widgets por linha de forma vertical
-        layout.addWidget(self.usuario_entry)
-        layout.addWidget(self.tsenha)
-        layout.addWidget(self.senha_entry)
-        layout.addWidget(self.logar)
-        layout.addWidget(self.cadastrar)
-        layout.addWidget(self.recuperar_senha)
+        gridTelaLogin = QVBoxLayout()
+        gridTelaLogin.addWidget(self.tusuario) # Define a ordem dos Widgets por linha de forma vertical
+        gridTelaLogin.addWidget(self.usuario_entry)
+        gridTelaLogin.addWidget(self.tsenha)
+        gridTelaLogin.addWidget(self.senha_entry)
+        gridTelaLogin.addWidget(self.logar)
+        gridTelaLogin.addWidget(self.cadastrar)
+        gridTelaLogin.addWidget(self.recuperar_senha)
+
+        telaLogin = QGridLayout() # Define uma variavel como ordem de layout de diferentes aspectos
+        telaLogin.addLayout(gridTelaLogin, 0, 1)
+
+        self.telaLoginLayout.setLayout(telaLogin) # Guarda tudo dentro de um container QWidget()
+        #endregion
+
+        #region Tela de Cadastro
+        self.telaCadastroLayout = QWidget()
+
+
+        #endregion
+
+        #region Tela de Recuperação de Senha
+        self.telaRecuperarSenha = QWidget()
+
+
+        #endregion
+
+        self.telaPrincipal.addWidget(self.telaLoginLayout)
+        self.telaPrincipal.addWidget(self.telaCadastroLayout)
+        self.telaPrincipal.addWidget(self.telaRecuperarSenha)
+        self.telaPrincipal.setCurrentWidget(self.telaLoginLayout)
 
         container = QWidget() # Container que vai receber todos os botões e desenhar tudo na janela
-        container.setLayout(layout) # Define o layout da janela
+        container.setLayout(self.telaPrincipal) # Define o layout da janela
         self.setCentralWidget(container) # Define a disposição do elementos na janela
-
-       
-    def botao_clicado(self):
-        self.botao.setText("Apertou") # Define um texto a um texto ou botão
-        print("Clicou!")
 
 
 # Inicia a aplicação obrigatória do PySide6
