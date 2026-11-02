@@ -14,12 +14,12 @@ class Janela_Principal(QMainWindow):
 
         self.setWindowTitle("Janela") # Define o título da janela
 
-        self.caixa = QLineEdit() # Cria uma linha de texto na janela
-        self.caixa.setPlaceholderText("Digite Algo") # Define o texto temporario da linha de texto
+        caixa = QLineEdit() # Cria uma linha de texto na janela
+        caixa.setPlaceholderText("Digite Algo") # Define o texto temporario da linha de texto
 
-        self.botao = QPushButton("Aperte") # Cria um botão com texto
+        botao = QPushButton("Aperte") # Cria um botão com texto
         # botao.setCheckable(True) # Define se vai ser um botão de alternancia ou não
-        self.botao.clicked.connect(self.botao_clicado) # Executa a função selecionada dentro da propria classe
+        botao.clicked.connect(self.botao_clicado) # Executa a função selecionada dentro da propria classe
         # botao.clicked.connect(self.botao_clicou)
 
         self.setFixedSize(400, 300) # Define o tamanho da janela

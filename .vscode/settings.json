@@ -12,8 +12,8 @@
         },
         {
             "folderPath": "Projetos Python/Pyside6/",
-            "color": "foldercolorizer.color_ff0000",
-            "isFolderOnly": true
+            "isFolderOnly": true,
+            "color": "foldercolorizer.color_ff0000"
         }
     ]
 }

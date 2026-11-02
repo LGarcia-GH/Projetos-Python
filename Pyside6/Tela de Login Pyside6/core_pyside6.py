@@ -9,6 +9,10 @@ from PySide6.QtWidgets import (
     QPushButton, 
     QLineEdit, 
     QLabel,
-    QVBoxLayout
+    QVBoxLayout,
+    QHBoxLayout,
+    QGridLayout,
+    QStackedLayout,
+    QStackedWidget
 )
 
