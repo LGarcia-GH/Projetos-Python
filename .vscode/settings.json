@@ -1,0 +1,19 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "Projetos Python/Aulas Python/",
+            "isFolderOnly": true,
+            "color": "foldercolorizer.color_00d7ff"
+        },
+        {
+            "folderPath": "Projetos Python/TKInter/",
+            "isFolderOnly": true,
+            "color": "foldercolorizer.color_ff8700"
+        },
+        {
+            "folderPath": "Projetos Python/Pyside6/",
+            "color": "foldercolorizer.color_ff0000",
+            "isFolderOnly": true
+        }
+    ]
+}
