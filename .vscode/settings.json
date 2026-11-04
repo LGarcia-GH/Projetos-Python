@@ -14,6 +14,11 @@
             "folderPath": "Projetos Python/Pyside6/",
             "isFolderOnly": true,
             "color": "foldercolorizer.color_ff0000"
+        },
+        {
+            "folderPath": "Projetos Python/CustomTKinter/",
+            "isFolderOnly": true,
+            "color": "foldercolorizer.color_5fafaf"
         }
     ]
 }
