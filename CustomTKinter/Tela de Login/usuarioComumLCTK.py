@@ -19,6 +19,12 @@ imagem, _, = imagens_login(login_base)
 #endregion
 
 
+#region Configuração Inicial do CustomTkinter
+ctk.set_appearance_mode("dark")  # "System", "Dark", "Light"
+ctk.set_default_color_theme("green")  # Tema padrão
+#endregion
+
+
 #region Criação de Janela
 #Cria uma nova Janela
 janela = ctk.CTk()

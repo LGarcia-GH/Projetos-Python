@@ -17,6 +17,12 @@ _, _, _, _, logarComum = scripts(login_base)
 #endregion
 
 
+#region Configuração Inicial do CustomTkinter
+ctk.set_appearance_mode("dark")  # "System", "Dark", "Light"
+ctk.set_default_color_theme("green")  # Tema padrão
+#endregion
+
+
 #region Função de Registro JSON [ rgba(40,40,0)]
 #Tenta Carregar o Arquivo Json com as Contas Registradas
 contas = criarRegistro()
@@ -37,7 +43,7 @@ janela.iconphoto(True, icone)
 #Titulo da Janela do Programa
 janela.title("Cadastro de Conta")
 #Tamanho da Tela do Programa
-janela.geometry("500x300")
+janela.geometry("700x400")
 
 janela.resizable(False, False)
 

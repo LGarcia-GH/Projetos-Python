@@ -9,6 +9,8 @@ login_base = caminho_local()
 
 caminho_icone = icone(login_base)
 
+titulo = fontes(login_base)
+
 _, cadastrar, _, _, _, = scripts(login_base)
 _, _, RSenha, _, _, = scripts(login_base)
 _, _, _, logarADM, _ = scripts(login_base)
@@ -17,8 +19,8 @@ _, _, _, _, logarComum = scripts(login_base)
 
 
 #region Configuração Inicial do CustomTkinter
-ctk.set_appearance_mode("System")  # "System", "Dark", "Light"
-ctk.set_default_color_theme("blue")  # Tema padrão
+ctk.set_appearance_mode("dark")  # "System", "Dark", "Light"
+ctk.set_default_color_theme("green")  # Tema padrão
 #endregion
 
 
@@ -40,7 +42,7 @@ programa = ctk.CTkFrame(janela)
 # Titulo da Janela do Programa
 janela.title("Login")
 # Tamanho da Tela do Programa
-janela.geometry("500x300")
+janela.geometry("700x400")
 
 programa.place(relx=0.5, rely=0.5, anchor="center")
 
@@ -49,14 +51,14 @@ janela.resizable(False, False)
 
 
 #region Texto Nome do Programa
-titulo = ctk.CTkLabel(programa, text="PlaceHolder", font=("Roboto Mono", 16))
-titulo.pack(pady=(0, 14))
+titulo = ctk.CTkLabel(programa, text="PlaceHolder", font=(titulo, 30))
+titulo.pack(pady=(0, 25))
 #endregion
 
 
 #region Aba de Login
 # Texto de Login
-usuarioJ = ctk.CTkLabel(programa, text="Usuário:", font=("Arial", 12))
+usuarioJ = ctk.CTkLabel(programa, text="Usuário:", font=("Arial", 18))
 usuarioJ.pack()
 
 # Caixa de Texto de Login
@@ -66,7 +68,7 @@ usuario_entry.pack()
 
 #region Aba de Senha
 # Texto de Senha
-SenhaJ = ctk.CTkLabel(programa, text="Senha:", font=("Arial", 12))
+SenhaJ = ctk.CTkLabel(programa, text="Senha:", font=("Arial", 18))
 SenhaJ.pack()
 
 # Caixa de Texto de Senha
@@ -102,7 +104,7 @@ def loginVerify():
         messagebox.showerror("Erro", "Usuario Não Existe no Sistema")
         print("Usuario Não Existe no Sistema")
 
-confirmar_button = ctk.CTkButton(programa, text="Logar", font=("Arial", 12), command=loginVerify)
+confirmar_button = ctk.CTkButton(programa, text="Logar", font=("Arial", 16), command=loginVerify)
 confirmar_button.pack(pady=5)
 #endregion
 
@@ -111,7 +113,7 @@ def telaCadastro():
     subprocess.Popen(["python3", cadastrar])
     sys.exit()
 
-registrar = ctk.CTkButton(programa, text="Cadastrar", font=("Arial", 12), command=telaCadastro)
+registrar = ctk.CTkButton(programa, text="Cadastrar", font=("Arial", 16), command=telaCadastro)
 registrar.pack(pady=5)
 #endregion
 
@@ -120,7 +122,7 @@ def telaRecuperar():
     subprocess.Popen(["python3", RSenha])
     sys.exit()
 
-recuperar = ctk.CTkButton(programa, text="Recuperar Senha", font=("Arial", 12), command=telaRecuperar)
+recuperar = ctk.CTkButton(programa, text="Recuperar Senha", font=("Arial", 16), command=telaRecuperar)
 recuperar.pack(pady=5)
 #endregion
 

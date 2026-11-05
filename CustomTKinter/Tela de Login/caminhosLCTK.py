@@ -8,6 +8,10 @@ def icone(login_base):
     caminho_icone = login_base / "img" / "IconeF.png"
     return caminho_icone
 
+def fontes(login_base):
+    titulo = login_base / "fonts" / "BebasNeue-Regular.ttf"
+    return titulo
+
 def scripts(login_base):
     caminho_login = login_base / "telaLoginLCTK.py"
     caminho_cadastro = login_base / "telaCadastroLCTK.py"

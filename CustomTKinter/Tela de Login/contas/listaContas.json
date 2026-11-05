@@ -1,14 +1,18 @@
 {
     "emailUsuario": {
-        "adm@gmail.com": "adm"
+        "adm@gmail.com": "adm",
+        "feliGordo@gmail.com": "bigfiiip"
     },
     "senha": [
-        "Admininastror"
+        "Admininastror",
+        "69"
     ],
     "idade": [
-        22
+        22,
+        18
     ],
     "superUsuario": [
-        1
+        1,
+        0
     ]
 }
