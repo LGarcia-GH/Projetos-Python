@@ -50,5 +50,4 @@ def criarRegistro():
 def salvarRegistro(contas):
     with open(caminho_arquivo, "w", encoding="utf-8") as salvarContas:
         json.dump(contas, salvarContas, indent=4, ensure_ascii=False)
-
 #endregion
