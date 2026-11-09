@@ -9,6 +9,7 @@ from registroLCTK import criarRegistro
 login_base = caminho_local()
 
 caminho_icone = icone(login_base)
+titulo = fontes(login_base)
 
 login, _, _, _, _, = scripts(login_base)
 _, cadastrar, _, _, _, = scripts(login_base)
@@ -43,7 +44,7 @@ janela = ctk.CTk()
 #Função Para Usar Uma Imagem Como Icone do Programa
 icone = tk.PhotoImage(file=caminho_icone)
 
-programa = ctk.CTkFrame(janela)
+programa = ctk.CTkFrame(janela, fg_color="transparent")
 programa.place(relx=0.5, rely=0.5, anchor="center")
 
 #O comando iconephoto() é usado para definir o ícone da janela usando imagens ao invez de .ico
@@ -60,14 +61,14 @@ janela.resizable(False, False)
 
 
 #region Texto Nome do Programa
-titulo = ctk.CTkLabel(programa, text="PlaceHolder", font=("Roboto Mono", 16))
-titulo.pack(pady=(0,18))
+titulo = ctk.CTkLabel(programa, text="PlaceHolder", font=(titulo, 30))
+titulo.pack(pady=(0,40))
 #endregion
 
 
 #region Aba de Verificação de Email
 #Texto de Login
-emailJ = ctk.CTkLabel(programa, text="Email:", font=("Arial", 12))
+emailJ = ctk.CTkLabel(programa, text="Email:", font=("Arial", 18))
 emailJ.pack()
 
 #Caixa de Texto de Verificação de Email
@@ -76,7 +77,7 @@ email_entry.pack()
 #endregion
 
 #region Aba de Verificação de Idade
-idadeJ = ctk.CTkLabel(programa, text="Idade:", font=("Arial", 12))
+idadeJ = ctk.CTkLabel(programa, text="Idade:", font=("Arial", 18))
 idadeJ.pack()
 
 #Caixa de Texto de Verificação de Email

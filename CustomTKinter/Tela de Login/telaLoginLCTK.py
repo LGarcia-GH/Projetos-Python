@@ -37,7 +37,7 @@ janela = ctk.CTk()
 icone = tk.PhotoImage(file=caminho_icone)
 janela.iconphoto(True, icone)
 
-programa = ctk.CTkFrame(janela)
+programa = ctk.CTkFrame(janela, fg_color="transparent")
 
 # Titulo da Janela do Programa
 janela.title("Login")
@@ -52,7 +52,7 @@ janela.resizable(False, False)
 
 #region Texto Nome do Programa
 titulo = ctk.CTkLabel(programa, text="PlaceHolder", font=(titulo, 30))
-titulo.pack(pady=(0, 25))
+titulo.pack(pady=(0, 40))
 #endregion
 
 
