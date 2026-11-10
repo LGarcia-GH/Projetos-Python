@@ -1,6 +1,13 @@
 from CTKImport import *
+from caminhosCTK import *
 # Biblioteca Usada Para Receber Textox String e Converte-los Para Operações Matemáticas
 import sympy as sp
+
+
+# Chamada de Caminhos Variaveis
+caminhoBase = caminho_local()
+iconeCTK = icone_local(caminhoBase)
+backspace = teclas(caminhoBase)
 
 
 #region Criação da Janela do CustomTKinter
@@ -13,6 +20,9 @@ janela.title("Calculadora")
 janela.geometry("320x500")
 programa.place(relx=0.5, rely=0.5, anchor="center")
 janela.resizable(False, False)
+
+icone = tk.PhotoImage(file=iconeCTK)
+janela.iconphoto(True, icone)
 #endregion Criação da Janela do CustomTKinter
 
 #region Container de Botões
@@ -294,17 +304,15 @@ mais.pack(side=ctk.LEFT, padx=2)
 #region Confirmação e Delete
 resultado = ctk.CTkButton(edit, 
 text="=", 
-font=("Arial", 25),
+font=("Segoe UI", 38),
 width=125,
 height=60,
-fg_color="#006EAA",
-hover_color="#026397",
 command= enter)
 resultado.pack(side=ctk.LEFT, padx=2)
 
 backspace = ctk.CTkButton(edit,
-text="<-",
-font=("Arial", 25),
+text= "",
+image= backspace,
 width=60,
 height=60,
 fg_color="#BE0000",
@@ -313,8 +321,8 @@ command= lambda: apagar())
 backspace.pack(side=ctk.LEFT, padx=2)
 
 limpar = ctk.CTkButton(edit,
-text="C",
-font=("Arial", 25),
+text="AC",
+font=("Segoe UI", 25),
 width=60,
 height=60,
 fg_color="#BE0000",
@@ -331,7 +339,5 @@ linha0.pack(side=ctk.TOP, pady=2)
 edit.pack(pady=2)
 #endregion Inserção dos Botões da Tela
 #endregion Botões
-
-programa.bind("<Return>", lambda event: enter)
 
 janela.mainloop()
